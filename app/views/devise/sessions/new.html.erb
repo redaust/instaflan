@@ -1,27 +1,5 @@
 <h2>Instaflan Login Page</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
 
 <%= render "devise/shared/links" %>
 
@@ -33,11 +11,15 @@
     <div class="card text-center pt-5" style="width: 23rem;">
       <%= image_tag 'instaflan_logo.png', class: "card-img-top" %>
       <div class="card-body">
-        <div class="mb-3 mt-4">
-          <input type="email" class="form-control" id="email" placeholder="Phone Number, Username, or E-Mail"> </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" id="password" placeholder="Password"> </div>
-        <a href="#" class="btn btn-dark d-lg-block">Log in to Instaflan </a>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="mb-3 mt-4">
+            <%= f.email_field :email, class: "form-control", placeholder: "Phone Number, Username, or E-Mail"  %>
+             </div>
+          <div class="mb-3">
+          <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+          </div>
+          <%= f.submit "Log in to Instaflan", class: "btn btn-dark d-lg-block" %>
+          <% end %>
 
         <div class="d-flex align-items-center mt-4">
           <div class= "line"> </div>
