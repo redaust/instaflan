@@ -17,7 +17,7 @@
           <div class="mb-3">
           <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
           </div>
-          <%= f.submit "Log in to Instaflan", class: "btn btn-dark d-lg-block" %>
+          <%= f.submit "Log in to Instaflan", class: "btn btn-dark w-100" %>
           <% end %>
 
         <div class="d-flex align-items-center mt-4">
@@ -37,14 +37,14 @@
      <% end %>
 
 
-      <a href="#" class="fs-6 d-block my-4 text-decoration-none"> Forgot password? </a>
+      <a> <%= link_to "Forgot Password?", new_user_password_path, class: "fs-6 d-block my-4 text-decoration-none" %> </a>
 
       </div>
     </div>
     <div class="card text-center py-2 mt-3" style="width: 23rem;">
       <div class="card-text">
         Don't have an account?
-        <a href="#" class="fs-6 d-block my-4 text-decoration-none"> Sign up </a>
+        <%= link_to "Sign Up", new_user_registration_path, class: "fs-6 d-block my-4 text-decoration-none" %>
       </div>
       
     </div>
@@ -52,5 +52,4 @@
 
 
 </div>
-<%= render "devise/shared/links" %>
 </div>
