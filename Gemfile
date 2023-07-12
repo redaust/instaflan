@@ -22,6 +22,8 @@ gem 'bootstrap'
 
 gem 'devise'
 
+gem "font-awesome-sass", "~> 6.4.0"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
