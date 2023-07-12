@@ -11,15 +11,9 @@
   </head>
 
   <body>
-
     <% if current_user %>
     <%= render 'layouts/navbar' %>
     <% end %>
-    <div class= "d-flex flex-row" >
-    <%= render 'story/stories_list' %>
-    <div class= "d-flex flex-row" >
-    <%= render 'suggestions/suggestions_list' %>
-  </div>
     <%= yield %>
   </body>
 </html>

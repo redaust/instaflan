@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-<div class="d-flex px-4">
+<div class="d-flex px-2">
         <form class="d-flex" role="search">
           <input class="form-control me-2 border-secondary" type="search" placeholder="Search" aria-label="Search" style="width: 10rem;" >
           <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -15,26 +15,29 @@
       </div>
       <br/>
  
-      <div class="navbar-collapse justify-content-right gap-2 w-70 px-5"> 
-          <%= link_to root_path, class:"text-dark flex-row" do %><i class="fa-sharp fa-solid fa-house"> Home</i> <% end %>
-          <i class="fa-brands fa-facebook-messenger flex-row">Messenger</i>
-          <%= link_to new_post_path, class:"text-dark flex-row " do %><i class="fa-solid fa-square-plus">Add Post</i> <% end %>
-          <i class="fa-solid fa-compass flex-row ">Discover</i>
-          <i class="fa-solid fa-heart flex-row ">Likes</i>
-        </div>
-      </div>
+      <div class="navbar-collapse justify-content-center gap-2 w-70 px-2"> 
+          <%= link_to root_path, class:"text-dark flex-row" do %><i class="fa-sharp fa-solid fa-house"></i> <% end %>
+          <i class="fa-brands fa-facebook-messenger flex-row"></i>
+          <%= link_to new_post_path, class:"text-dark flex-row " do %><i class="fa-solid fa-square-plus"></i> <% end %>
+          <i class="fa-solid fa-compass flex-row "></i>
+          <i class="fa-solid fa-heart flex-row "></i>
 
 
 
 
-
-
-      
-               <% if current_user && current_user.profile_pic.attached? %>
-     <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded", style: "width: 5%" %>
+<div class="dropdown gap-4 px-5">
+  <a class="d-flex px-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <% if current_user && current_user.profile_pic.attached? %>
+     <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded", style: "width: 10%" %>
      <% else %>
-     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 5%" %>
+     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 10%" %>
      <% end %>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= button_to 'Log out', destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
+  </ul>
+</div>
+
    </div>
     </div>
 </nav>
