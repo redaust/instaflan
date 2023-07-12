@@ -11,9 +11,13 @@
   </head>
 
   <body>
+
+    <% if current_user %>
     <%= render 'layouts/navbar' %>
-    <div class= "d-flex align-items-center justify-content-center mt-4" >
+    <% end %>
+    <div class= "d-flex flex-row" >
     <%= render 'story/stories_list' %>
+    <div class= "d-flex flex-row" >
     <%= render 'suggestions/suggestions_list' %>
   </div>
     <%= yield %>

@@ -7,21 +7,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-<div class="d-flex px-2">
+<div class="d-flex px-4">
         <form class="d-flex" role="search">
-          <input class="form-control me-2 border-secondary" type="search" placeholder="Search" aria-label="Search" >
+          <input class="form-control me-2 border-secondary" type="search" placeholder="Search" aria-label="Search" style="width: 10rem;" >
           <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
       <br/>
  
-      <div class="navbar-collapse gap-3 w-70 px-2"> 
-          <%= link_to root_path, class:"text-dark" do %><i class="fa-sharp fa-solid fa-house"> Home</i> <% end %>
-          <i class="fa-brands fa-facebook-messenger">Messenger</i>
-          <%= link_to new_post_path, class:"text-dark" do %><i class="fa-solid fa-square-plus">Add Post</i> <% end %>
-          <i class="fa-solid fa-compass">Discover</i>
-          <i class="fa-solid fa-heart">Likes</i>
+      <div class="navbar-collapse justify-content-right gap-2 w-70 px-5"> 
+          <%= link_to root_path, class:"text-dark flex-row" do %><i class="fa-sharp fa-solid fa-house"> Home</i> <% end %>
+          <i class="fa-brands fa-facebook-messenger flex-row">Messenger</i>
+          <%= link_to new_post_path, class:"text-dark flex-row " do %><i class="fa-solid fa-square-plus">Add Post</i> <% end %>
+          <i class="fa-solid fa-compass flex-row ">Discover</i>
+          <i class="fa-solid fa-heart flex-row ">Likes</i>
         </div>
+      </div>
+
+
+
+
+
+
+      
                <% if current_user && current_user.profile_pic.attached? %>
      <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded", style: "width: 5%" %>
      <% else %>
@@ -29,7 +37,4 @@
      <% end %>
    </div>
     </div>
-  </div>
-    </div>
-  </div>
 </nav>

@@ -1,14 +1,15 @@
 <div class="d-flex justify-content-between">
-	<div>
-	<%= image_tag 'flanatar.png', class: "img-thumbnail rounded border border-2 border-warning", style: "width: 2.5rem" %>
-	<div class="d-flex flex-column">
-	<small> FlanFan </small>
-	<small> Suggested for You </small>
+	<div class="d-flex">
+	<%= image_tag 'flanatar.png', class: "img-thumbnail rounded border border-2 border-dark", style: "width: 2.5rem" %>
+	<div class="d-flex flex-column mx-2">
+	<small class="fw-bold" style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis; max-width:10rem;"> FlanFan </small>
+	<small class="text-secondary" style="font-size: .7rem; overflow: hidden; white-space: nowrap;text-overflow: ellipsis; max-width:10rem;"> Suggested for You </small>
 	</div>
 	</div>
 
 <%= link_to root_path, style:"text-decoration:none" do %>
-<small class="fw-bold text-primary">Follow</small>
+
+<small class="fw-bold text-primary px-3">Follow</small>
 
 <% end %>
 
