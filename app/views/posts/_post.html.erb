@@ -32,8 +32,11 @@
   <p>
     <strong>Images:</strong>
     <%= post.images.each do |image| %>
-    <div> <%= link_to image.filename, image %> </div>
+    <div> <%= link_to image.filename, image %>
+    <%= image_tag image %> </div>
   </p>
 
 
 </div>
+
+<% end %>
