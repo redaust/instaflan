@@ -1,4 +1,10 @@
 <center> <h1> Home Page </h1>
+ <% if current_user && current_user.profile_pic.attached? %>
+     <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded ms-auto", style: "width: 5%" %>
+     <% else %>
+     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 5%" %>
+     <% end %>
+
 <% if current_user %>
     <%= render 'story/stories_list' %>
     <%=render "posts/post", post: current_user.posts.first %>

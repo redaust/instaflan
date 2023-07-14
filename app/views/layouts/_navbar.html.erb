@@ -25,15 +25,11 @@
 
 
 
-<div class="dropdown gap-4 px-5">
-  <a class="d-flex px-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <% if current_user && current_user.profile_pic.attached? %>
-     <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded", style: "width: 10%" %>
-     <% else %>
-     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 10%" %>
-     <% end %>
+<div class="dropdown ms-auto">
+  <a class="d-flex btn btn-warning" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  Options
   </a>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu ms-auto">
     <li><%= button_to 'Log out', destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
   </ul>
 </div>
