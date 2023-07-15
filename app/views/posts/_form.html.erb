@@ -2,14 +2,21 @@
 <!-- Modal -->
 <div class="modal fade modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
+    <%= form_with(model: post) do |form| %>
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-                <%= form_with(model: post) do |form| %>
-          <% if post.errors.any? %>
+      <div class="modal-body d-flex" >
+
+      <div class="border-end border-secondary mx-2" style="width: 60%;>
+        <%= form.label :images, style: "display: block" %>
+        <%= form.file_field :images, multiple: true %>
+      </div>
+
+      <div>
+         <% if post.errors.any? %>
             <div style="color: red">
               <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -46,21 +53,24 @@
             <%= form.label :show_likes_count, style: "display: block" %>
             <%= form.check_box :show_likes_count %>
           </div>
+      </div>
+                
+         
 
           <div>
-            <%= form.label :images, style: "display: block" %>
-            <%= form.file_field :images, multiple: true %>
+  
           </div>
 
           <div>
             <%= form.submit %>
           </div>
-        <% end %>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Understood</button>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
