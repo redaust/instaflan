@@ -18,7 +18,10 @@
       <div class="navbar-collapse justify-content-center gap-2 w-70 px-2"> 
           <%= link_to root_path, class:"text-dark flex-row" do %><i class="fa-sharp fa-solid fa-house"></i> <% end %>
           <i class="fa-brands fa-facebook-messenger flex-row"></i>
-          <%= link_to new_post_path, class:"text-dark flex-row " do %><i class="fa-solid fa-square-plus"></i> <% end %>
+          <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <i class="fa-solid fa-square-plus"></i> 
+          </button>
+          <%= link_to new_post_path, class:"text-dark flex-row " do %><% end %>
           <i class="fa-solid fa-compass flex-row "></i>
           <i class="fa-solid fa-heart flex-row "></i>
 
@@ -37,3 +40,5 @@
    </div>
     </div>
 </nav>
+
+<%= render 'posts/form', post: Post.new %>

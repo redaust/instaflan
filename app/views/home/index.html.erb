@@ -6,9 +6,22 @@
      <% end %>
 
 <% if current_user %>
+	<div class="d-flex my-4 justify-content-center">
+		<div class="d-flex flex-column">
     <%= render 'story/stories_list' %>
-    <%=render "posts/post", post: current_user.posts.first %>
+    </div>
+    </div>
+    <div class="flex flex-column">
+    <% current_user.posts.each do |p| %>
+    <%= render 'posts/post', post: p %>
+    <% end %>
+	</div>
+
+	<div class="d-flex my-4 justify-content-center">
+		<div class="d-flex flex-column">
     <%= render 'suggestions/suggestions_list' %>
+</div>
+	</div>
     <% end %>
 
   
