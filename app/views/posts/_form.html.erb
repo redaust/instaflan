@@ -11,7 +11,7 @@
       <div class="modal-body d-flex" >
 
       <div class="border-end border-secondary mx-2" style="width: 60%;>
-        <%= form.file_field :images, multiple: true %>
+        <%= form.file_field :images, multiple: true, id: "post-images" %>
         </div>
 
       <div style="width: 40%">
@@ -45,7 +45,7 @@
           </div>
           <div class="d-flex justify-content-between">
           <a class="btn btn-dark form-control my-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Advanced Settings            <i class="fa-regular fa-square-caret-down"></i>
+            Advanced Settings <i class="fa-regular fa-square-caret-down"></i>
           </a>
         </div>
                     <div class="collapse" id="collapseExample">
