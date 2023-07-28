@@ -5,6 +5,8 @@ import * as FilePond from 'filepond';
 	import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 
 	// Register the plugin
+    document.addEventListener("turbo:load", loadFilePond);
+    function loadFilePond () {
     FilePond.registerPlugin(
     	FilePondPluginImagePreview,
      	FilePondPluginFileValidateType
@@ -21,4 +23,4 @@ import * as FilePond from 'filepond';
     	allowMultiple: true,
     	allowReorder: true,
     	acceptedFileTypes: ['image/*']
-    });
+    }); }

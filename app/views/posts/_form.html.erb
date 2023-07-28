@@ -11,7 +11,7 @@
       <div class="modal-body d-flex" >
 
       <div class="border-end border-secondary mx-2" style="width: 60%;>
-        <%= form.file_field :images, multiple: true, id: "post-images" %>
+        <%= form.file_field :images, multiple: true, id: "post-images", required: true %>
         </div>
 
       <div style="width: 40%">
@@ -52,14 +52,14 @@
             <div class="card card-body">
                         <div>
             <%= form.label :allow_comments, style: "display: block" %>
-            <%= form.check_box :allow_comments %>
+            <%= form.check_box :allow_comments, checked: true %>
           </div>
 
 
 
           <div>
             <%= form.label :show_likes_count, style: "display: block" %>
-            <%= form.check_box :show_likes_count %>
+            <%= form.check_box :show_likes_count, checked: true %>
           </div>
             </div>
           </div>
