@@ -1,3 +1,5 @@
+
+<%= render "layouts/flash_messages" %>
 <center> <h1> Home Page </h1>
  <% if current_user && current_user.profile_pic.attached? %>
      <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded ms-auto", style: "width: 5%" %>
