@@ -22,7 +22,9 @@
           <i class="fa-solid fa-square-plus"></i> 
           </button>
           <%= link_to new_post_path, class:"text-dark flex-row " do %><% end %>
-          <i class="fa-solid fa-compass flex-row "></i>
+          <%= link_to posts_path, class:"text-dark flex-row" do %>
+          <i class="fa-solid fa-compass flex-row "></i> 
+          <% end %>
           <i class="fa-solid fa-heart flex-row "></i>
 
 

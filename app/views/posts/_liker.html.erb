@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+	<div class="d-flex">
+	<%= image_tag 'flanatar.png', class: "img-thumbnail rounded border border-2 border-dark", style: "width: 2.5rem" %>
+	<div class="d-flex flex-column mx-2 justify-content-center">
+	<small class="fw-bold" style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis; max-width:10rem;"> <%= liker.username %> </small>
+	</div>
+	</div>
+
+<%= link_to root_path, class:"btn btn-light", style:"text-decoration:none" do %>
+
+<small class="fw-bold text-primary px-3">Follow</small>
+
+<% end %>
+
+</div>
