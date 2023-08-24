@@ -6,12 +6,16 @@
   <div class="card" style="width: 26rem;">
     <div class="card-header bg-white">
       <div class="d-flex justify-content-between">
+        <%= link_to post.user, class: "a-decoration-none" do %>
      <% if post.user.profile_pic.attached? %>
-     <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded", style: "width: 10%" %>
+     <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded", style: "width: 33%" %>
      <% else %>
-     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 10%" %>
+     <%= image_tag 'flanatar.png', class: "img-thumbnail rounded", style: "width: 33%" %>
      <% end %>
+     <% end %>
+     <%= link_to post.user, class: "a-decoration-none" do %>
       <span class="fw-bold mx-2"> <%= post.user.username %> </span>
+      <% end %>
       <br/> User # <%= post.user_id %> </div>
 
       <div class="dropdown">
@@ -19,8 +23,8 @@
     Options
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Edit Post</a></li>
-    <li><a class="dropdown-item" href="#">Delete Post</a></li>
+    <li>
+      <%= button_to 'Delete Post', post, method: :delete, class: "dropdown-item" %>
   </ul>
 </div>
       </div>
