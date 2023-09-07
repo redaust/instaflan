@@ -36,7 +36,7 @@
                   <li>
                           <div class="d-flex justify-content-between">
                               <div class="d-flex">
-                              <%= image_tag 'flanatar.png', class: "img-thumbnail rounded border border-2 border-dark", style: "height: 2.5rem" %>
+                              <%= image_tag fr.follower.profile_pic.attached? ?  fr.follower.profile_pic : 'flanatar.png', class: "img-thumbnail rounded W-25", style: "max-width: 2.5rem; max-height: 2.5rem; " %>
                               <div class="d-flex flex-column mx-2 justify-content-center">
                               <small class="fw-bold p-3" style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis; max-width:15rem;"> 
                                 <%= link_to fr.follower, class: "a-decoration-none" do %>
